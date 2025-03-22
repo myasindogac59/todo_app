@@ -1,12 +1,12 @@
 {% extends 'core/base.html' %}
 
 {% block container %}
-<h1 class="text-danger">Todo List ({{ todos.count }})</h1>
-<ul>
+<div class="col-sm-6 offset-sm-3">
+  <h1 class="text-danger">Todo List ({{ todos.count }})</h1>
   {% for todo in todos %}
-  <li>
-    {{ todo.title }}
-  </li>
-  {% endfor %}
-</ul>
+<div class="list-group">
+  <a href="{% url 'todo_detail' id=todo.pk %}" class="list-group-item list-group-item-action">{{ todo.title }}</a>
+</div>
+{% endfor %}
+</div>
 {% endblock container %}
