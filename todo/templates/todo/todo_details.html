@@ -25,5 +25,10 @@
       <a href="/" class="card-link">Geriye Dön</a>
     </div>
   </div>
+  <ul class="list-inline mt-2">
+    {% for tag in todo.tag.all %}
+    <li class="list-inline-item"><span class="badge rounded-pill text-bg-primary">{{ tag }}</span></li>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock container %}

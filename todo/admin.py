@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Todo, Category)
+from .models import (Todo, Category, Tag)
 # Register your models here.
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -29,3 +29,4 @@ class TodoAdmin(admin.ModelAdmin):
 
 admin.site.register(Todo, TodoAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tag)
