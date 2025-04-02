@@ -26,6 +26,15 @@ class Tag(models.Model):
   slug = AutoSlugField(populate_from='title', unique=True,)
   is_active = models.BooleanField(default=False)
 
+  def get_absolute_url(self):
+    return reverse(
+      'tag_detail',
+      kwargs= {
+        "tag_slug": self.slug,
+        
+        }
+      )
+
   def __str__(self):
     return self.title
 
