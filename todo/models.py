@@ -22,9 +22,9 @@ class Category(models.Model):
       )
 
 class Todo(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
   # category = models.ForeignKey(Category, on_delete=models.CASCADE)
   #bu kullanılmayacak cunku CASCADE kullaninca tüm TODOlar silinir
-  user = models.ForeignKey(User, on_delete=models.CASCADE)
   category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True) 
   title = models.CharField(max_length=200)
   content = models.TextField(blank=True, null=True)
